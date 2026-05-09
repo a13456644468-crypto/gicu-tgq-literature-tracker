@@ -1,0 +1,16 @@
+<view class="page">
+  <text class="section-title">设置</text>
+
+  <view class="card">
+    <text class="label">后端 API 地址</text>
+    <input class="input" value="{{apiBaseURL}}" bindinput="onInput" placeholder="如 https://api.yourdomain.com" />
+    <button class="primary-button save" bindtap="save">保存</button>
+    <text class="hint">正式版必须使用已配置到微信公众平台的 HTTPS request 合法域名。</text>
+  </view>
+
+  <view class="card">
+    <text class="module">SCI 文献自动追踪</text>
+    <text class="module">ICU Checklist 录入</text>
+    <text class="module">Canvas JPG 导出</text>
+  </view>
+</view>

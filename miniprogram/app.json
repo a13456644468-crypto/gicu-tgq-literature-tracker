@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/papers/index",
+    "pages/papers/detail",
+    "pages/checklist/index",
+    "pages/settings/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "GICU-TGQ",
+    "navigationBarBackgroundColor": "#0f766e",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f6f8fb"
+  },
+  "tabBar": {
+    "color": "#64748b",
+    "selectedColor": "#0f766e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/papers/index",
+        "text": "文献"
+      },
+      {
+        "pagePath": "pages/checklist/index",
+        "text": "Checklist"
+      },
+      {
+        "pagePath": "pages/settings/index",
+        "text": "设置"
+      }
+    ]
+  },
+  "permission": {
+    "scope.writePhotosAlbum": {
+      "desc": "用于保存 ICU Checklist 表格 JPG 图片"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

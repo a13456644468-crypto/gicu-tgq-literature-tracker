@@ -1,0 +1,46 @@
+<view class="page papers-page">
+  <text class="section-title">GICU-TGQ 文献追踪</text>
+
+  <scroll-view class="chips" scroll-x>
+    <view
+      wx:for="{{categories}}"
+      wx:key="value"
+      class="chip {{currentCategory === item.value ? 'active' : ''}}"
+      bindtap="switchCategory"
+      data-value="{{item.value}}"
+    >{{item.label}}</view>
+  </scroll-view>
+
+  <scroll-view class="journal-scroll" scroll-x>
+    <view class="journal-chip {{!currentJournalId ? 'active' : ''}}" bindtap="clearJournal">全部期刊</view>
+    <view
+      wx:for="{{journals}}"
+      wx:key="id"
+      class="journal-chip {{currentJournalId === item.id ? 'active' : ''}}"
+      bindtap="switchJournal"
+      data-id="{{item.id}}"
+    >{{item.name}}</view>
+  </scroll-view>
+
+  <view wx:if="{{loading}}" class="empty muted">加载中...</view>
+  <view wx:elif="{{papers.length === 0}}" class="empty muted">暂无文献</view>
+
+  <view
+    wx:for="{{papers}}"
+    wx:key="id"
+    class="card paper-card"
+    bindtap="openDetail"
+    data-id="{{item.id}}"
+  >
+    <view class="paper-meta">
+      <text class="journal">{{journalNameMap[item.journal_id] || '未知期刊'}}</text>
+      <text wx:if="{{item.is_new}}" class="new-badge">NEW</text>
+    </view>
+    <text class="paper-title">{{item.title}}</text>
+    <text class="paper-authors">{{item.authors || '作者未知'}}</text>
+    <view class="paper-footer">
+      <text>{{item.pub_date || '日期未知'}}</text>
+      <text>PMID {{item.pmid}}</text>
+    </view>
+  </view>
+</view>

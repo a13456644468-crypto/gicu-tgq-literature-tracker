@@ -1,0 +1,79 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.picker-value {
+  height: 76rpx;
+  line-height: 76rpx;
+  padding: 0 16rpx;
+  border: 1rpx solid #cbd5e1;
+  border-radius: 10rpx;
+  background: #ffffff;
+}
+
+.shift-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.shift {
+  flex: 1;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.shift.active {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.actions {
+  margin-top: 22rpx;
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14rpx;
+  border-bottom: 1rpx solid #e2e8f0;
+  color: #0f172a;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.delete {
+  color: #dc2626;
+  font-size: 26rpx;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.bottom-actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 16rpx;
+  padding: 18rpx 0;
+  background: #f6f8fb;
+}
+
+.bottom-actions button {
+  flex: 1;
+}
+
+.export-canvas {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  width: 1400px;
+  height: 900px;
+}

@@ -1,0 +1,18 @@
+<view class="page">
+  <view wx:if="{{paper}}" class="card detail-card">
+    <text class="journal">{{journalName}}</text>
+    <text class="title">{{paper.title}}</text>
+    <text class="authors">{{paper.authors || '作者未知'}}</text>
+    <view class="meta">
+      <text>{{paper.pub_date || '日期未知'}}</text>
+      <text>PMID {{paper.pmid}}</text>
+    </view>
+    <text class="abstract-title">摘要</text>
+    <text class="abstract">{{paper.abstract || '暂无摘要'}}</text>
+    <view class="button-row">
+      <button class="secondary-button" bindtap="copyPubMed">复制 PubMed 链接</button>
+      <button class="primary-button" bindtap="markRead">标记已读</button>
+    </view>
+  </view>
+  <view wx:else class="empty muted">加载中...</view>
+</view>

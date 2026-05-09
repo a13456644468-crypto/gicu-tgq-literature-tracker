@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+!deploy/.env.prod.example
+
+# Local database and generated files
+backend/dev.db
+*.sqlite
+*.sqlite3
+
+# Node
+node_modules/
+package.json
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# WeChat DevTools local files
+project.private.config.json
+wechat-*.png
+wechat-upload-info*.json
+scripts-publish-mp.js
+
+# Browser automation profiles
+.edge-*/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

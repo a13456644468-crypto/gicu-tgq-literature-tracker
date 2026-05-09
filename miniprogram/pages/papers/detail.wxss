@@ -1,0 +1,48 @@
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.journal {
+  color: #0f766e;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.title {
+  color: #0f172a;
+  font-size: 36rpx;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.authors,
+.meta {
+  color: #64748b;
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.abstract-title {
+  margin-top: 16rpx;
+  color: #0f172a;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.abstract {
+  color: #334155;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+.empty {
+  padding: 120rpx 0;
+  text-align: center;
+}

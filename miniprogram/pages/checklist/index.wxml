@@ -1,0 +1,70 @@
+<view class="page checklist-page">
+  <text class="section-title">ICU 每日 Checklist</text>
+
+  <view class="card controls">
+    <text class="label">日期</text>
+    <picker mode="date" value="{{date}}" bindchange="onDateChange">
+      <view class="picker-value">{{date}}</view>
+    </picker>
+
+    <text class="label">班次</text>
+    <view class="shift-row">
+      <view class="shift {{shift === 'day' ? 'active' : ''}}" data-shift="day" bindtap="setShift">白班</view>
+      <view class="shift {{shift === 'night' ? 'active' : ''}}" data-shift="night" bindtap="setShift">夜班</view>
+    </view>
+
+    <view class="button-row actions">
+      <button class="secondary-button" bindtap="loadChecklist">加载当天</button>
+      <button class="primary-button" bindtap="addPatient">新增患者</button>
+    </view>
+  </view>
+
+  <view wx:for="{{patients}}" wx:key="localId" class="card patient-card">
+    <view class="patient-header">
+      <text>患者 {{index + 1}}</text>
+      <text class="delete" data-index="{{index}}" bindtap="removePatient">删除</text>
+    </view>
+
+    <text class="label">床号</text>
+    <input class="input" value="{{item.bed_number}}" data-index="{{index}}" data-field="bed_number" bindinput="onInput" placeholder="如 A01" />
+
+    <text class="label">姓名</text>
+    <input class="input" value="{{item.patient_name}}" data-index="{{index}}" data-field="patient_name" bindinput="onInput" placeholder="患者姓名" />
+
+    <text class="label">诊断</text>
+    <textarea class="textarea" value="{{item.diagnosis}}" data-index="{{index}}" data-field="diagnosis" bindinput="onInput" placeholder="主要诊断" />
+
+    <text class="label">病原体</text>
+    <input class="input" value="{{item.pathogen}}" data-index="{{index}}" data-field="pathogen" bindinput="onInput" placeholder="如 鲍曼不动杆菌" />
+
+    <text class="label">抗生素</text>
+    <input class="input" value="{{item.antibiotics}}" data-index="{{index}}" data-field="antibiotics" bindinput="onInput" placeholder="如 美罗培南 1g q8h" />
+
+    <text class="label">抗凝</text>
+    <input class="input" value="{{item.anticoagulation}}" data-index="{{index}}" data-field="anticoagulation" bindinput="onInput" />
+
+    <text class="label">营养</text>
+    <input class="input" value="{{item.nutrition}}" data-index="{{index}}" data-field="nutrition" bindinput="onInput" />
+
+    <view class="two-col">
+      <view>
+        <text class="label">计划出入量</text>
+        <input class="input" value="{{item.planned_io}}" data-index="{{index}}" data-field="planned_io" bindinput="onInput" />
+      </view>
+      <view>
+        <text class="label">实际出入量</text>
+        <input class="input" value="{{item.actual_io}}" data-index="{{index}}" data-field="actual_io" bindinput="onInput" />
+      </view>
+    </view>
+
+    <text class="label">备注</text>
+    <textarea class="textarea" value="{{item.notes}}" data-index="{{index}}" data-field="notes" bindinput="onInput" placeholder="特殊事项" />
+  </view>
+
+  <view class="bottom-actions">
+    <button class="secondary-button" bindtap="exportJPG">导出 JPG</button>
+    <button class="primary-button" bindtap="saveChecklist">保存 Checklist</button>
+  </view>
+
+  <canvas type="2d" id="exportCanvas" class="export-canvas"></canvas>
+</view>

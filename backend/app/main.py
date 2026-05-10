@@ -56,6 +56,15 @@ app.include_router(papers.router, prefix="/papers", tags=["papers"])
 app.include_router(checklists.router, prefix="/checklists", tags=["checklists"])
 
 
+@app.get("/")
+def root() -> dict[str, object]:
+    return {
+        "status": "ok",
+        "name": settings.app_name,
+        "endpoints": ["/health", "/journals", "/papers", "/checklists"],
+    }
+
+
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}

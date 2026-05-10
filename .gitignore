@@ -23,6 +23,7 @@ yarn-error.log*
 # WeChat DevTools local files
 project.private.config.json
 wechat-*.png
+github-*.png
 wechat-upload-info*.json
 scripts-publish-mp.js
 

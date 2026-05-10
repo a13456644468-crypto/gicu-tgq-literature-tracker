@@ -1,0 +1,8 @@
+.git
+.venv
+node_modules
+.edge-*
+*.png
+wechat-upload-info*.json
+backend/dev.db
+project.private.config.json

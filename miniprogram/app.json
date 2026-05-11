@@ -31,10 +31,5 @@
       }
     ]
   },
-  "permission": {
-    "scope.writePhotosAlbum": {
-      "desc": "用于保存 ICU Checklist 表格 JPG 图片"
-    }
-  },
   "sitemapLocation": "sitemap.json"
 }

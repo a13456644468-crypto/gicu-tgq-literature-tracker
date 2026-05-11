@@ -1,7 +1,5 @@
-const DEV_API_BASE_URL = 'http://10.196.43.135:8000'
-
-// Replace this with your public HTTPS backend domain before publishing.
-const PROD_API_BASE_URL = 'https://api.yourdomain.com'
+const DEV_API_BASE_URL = 'https://flask-6fvj-255873-7-1430464465.sh.run.tcloudbase.com'
+const PROD_API_BASE_URL = 'https://flask-6fvj-255873-7-1430464465.sh.run.tcloudbase.com'
 
 function getDefaultAPIBaseURL() {
   const account = wx.getAccountInfoSync ? wx.getAccountInfoSync() : null

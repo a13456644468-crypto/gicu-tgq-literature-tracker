@@ -31,6 +31,7 @@ function request(path, options = {}) {
       url: `${baseURL}${path}`,
       method,
       data,
+      timeout: 8000,
       header: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
